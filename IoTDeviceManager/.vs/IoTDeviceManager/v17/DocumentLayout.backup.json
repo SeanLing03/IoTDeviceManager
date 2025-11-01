@@ -1,0 +1,169 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|c:\\users\\blood\\desktop\\job\\job assessment\\iotdevicemanager\\iotdevicemanager\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|c:\\users\\blood\\desktop\\job\\job assessment\\iotdevicemanager\\iotdevicemanager\\services\\deviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|solutionrelative:services\\deviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|c:\\users\\blood\\desktop\\job\\job assessment\\iotdevicemanager\\iotdevicemanager\\views\\devicedialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|solutionrelative:views\\devicedialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|c:\\users\\blood\\desktop\\job\\job assessment\\iotdevicemanager\\iotdevicemanager\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|c:\\users\\blood\\desktop\\job\\job assessment\\iotdevicemanager\\iotdevicemanager\\services\\simulatedcommunicator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|solutionrelative:services\\simulatedcommunicator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|c:\\users\\blood\\desktop\\job\\job assessment\\iotdevicemanager\\iotdevicemanager\\models\\logentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|solutionrelative:models\\logentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|c:\\users\\blood\\desktop\\job\\job assessment\\iotdevicemanager\\iotdevicemanager\\models\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|solutionrelative:models\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|c:\\users\\blood\\desktop\\job\\job assessment\\iotdevicemanager\\iotdevicemanager\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|c:\\users\\blood\\desktop\\job\\job assessment\\iotdevicemanager\\iotdevicemanager\\iotdevicemanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{620516F6-E2E2-44B8-899D-6FE522B7C50F}|IoTDeviceManager.csproj|solutionrelative:iotdevicemanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-01T12:12:12.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Views\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-01T12:11:40.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DeviceDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\Views\\DeviceDialog.xaml",
+              "RelativeDocumentMoniker": "Views\\DeviceDialog.xaml",
+              "ToolTip": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\Views\\DeviceDialog.xaml",
+              "RelativeToolTip": "Views\\DeviceDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-01T12:11:19.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DeviceService.cs",
+              "DocumentMoniker": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\Services\\DeviceService.cs",
+              "RelativeDocumentMoniker": "Services\\DeviceService.cs",
+              "ToolTip": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\Services\\DeviceService.cs",
+              "RelativeToolTip": "Services\\DeviceService.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAwwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T12:10:03.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LogEntry.cs",
+              "DocumentMoniker": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\Models\\LogEntry.cs",
+              "RelativeDocumentMoniker": "Models\\LogEntry.cs",
+              "ToolTip": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\Models\\LogEntry.cs",
+              "RelativeToolTip": "Models\\LogEntry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T12:09:51.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Device.cs",
+              "DocumentMoniker": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\Models\\Device.cs",
+              "RelativeDocumentMoniker": "Models\\Device.cs",
+              "ToolTip": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\Models\\Device.cs",
+              "RelativeToolTip": "Models\\Device.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T12:07:28.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SimulatedCommunicator.cs",
+              "DocumentMoniker": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\Services\\SimulatedCommunicator.cs",
+              "RelativeDocumentMoniker": "Services\\SimulatedCommunicator.cs",
+              "ToolTip": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\Services\\SimulatedCommunicator.cs",
+              "RelativeToolTip": "Services\\SimulatedCommunicator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T12:06:49.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-11-01T11:55:29.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IoTDeviceManager.csproj",
+              "DocumentMoniker": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\IoTDeviceManager.csproj",
+              "RelativeDocumentMoniker": "IoTDeviceManager.csproj",
+              "ToolTip": "C:\\Users\\blood\\Desktop\\Job\\Job Assessment\\IoTDeviceManager\\IoTDeviceManager\\IoTDeviceManager.csproj",
+              "RelativeToolTip": "IoTDeviceManager.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-01T11:54:43.744Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

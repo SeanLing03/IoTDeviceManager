@@ -1,0 +1,289 @@
+<Window x:Class="IoTDeviceManager.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:IoTDeviceManager.ViewModels"
+        mc:Ignorable="d"
+        Title="IoT Device Manager (Simulation)" Height="850" Width="1350"
+        WindowStartupLocation="CenterScreen"
+        Background="#0f172a">
+	<Window.Resources>
+		<!-- Color palette -->
+		<SolidColorBrush x:Key="Accent"       Color="#22c55e"/>
+		<SolidColorBrush x:Key="AccentDark"   Color="#16a34a"/>
+		<SolidColorBrush x:Key="Danger"       Color="#ef4444"/>
+		<SolidColorBrush x:Key="DangerDark"   Color="#dc2626"/>
+		<SolidColorBrush x:Key="Neutral"      Color="#374151"/>
+		<SolidColorBrush x:Key="NeutralDark"  Color="#1f2937"/>
+		<SolidColorBrush x:Key="Card"         Color="#111827"/>
+		<SolidColorBrush x:Key="CardBorder"   Color="#1f2937"/>
+		<SolidColorBrush x:Key="TextPrimary"  Color="#e5e7eb"/>
+		<SolidColorBrush x:Key="TextSecondary" Color="#9ca3af"/>
+
+		<Style TargetType="TextBlock">
+			<Setter Property="Foreground" Value="{StaticResource TextPrimary}"/>
+		</Style>
+		<Style TargetType="GroupBox">
+			<Setter Property="Foreground" Value="{StaticResource TextPrimary}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource CardBorder}"/>
+			<Setter Property="Background" Value="{StaticResource Card}"/>
+			<Setter Property="Margin" Value="12"/>
+			<Setter Property="Padding" Value="12"/>
+		</Style>
+
+		<!-- Big toolbar buttons -->
+		<Style x:Key="ToolbarButton" TargetType="Button">
+			<Setter Property="Foreground" Value="{StaticResource TextPrimary}"/>
+			<Setter Property="FontWeight" Value="SemiBold"/>
+			<Setter Property="Padding" Value="14,8"/>
+			<Setter Property="Margin" Value="8,0,0,0"/>
+			<Setter Property="MinWidth" Value="110"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="Background" Value="{StaticResource Neutral}"/>
+			<Setter Property="Cursor" Value="Hand"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Border CornerRadius="10"
+                                Background="{TemplateBinding Background}">
+							<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="6,2"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsMouseOver" Value="True">
+								<Setter Property="Background" Value="{StaticResource NeutralDark}"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="False">
+								<Setter Property="Opacity" Value="0.5"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="PrimaryButton" BasedOn="{StaticResource ToolbarButton}" TargetType="Button">
+			<Setter Property="Background" Value="{StaticResource Accent}"/>
+			<Style.Triggers>
+				<Trigger Property="IsMouseOver" Value="True">
+					<Setter Property="Background" Value="{StaticResource AccentDark}"/>
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+		<Style x:Key="DangerButton" BasedOn="{StaticResource ToolbarButton}" TargetType="Button">
+			<Setter Property="Background" Value="{StaticResource Danger}"/>
+			<Style.Triggers>
+				<Trigger Property="IsMouseOver" Value="True">
+					<Setter Property="Background" Value="{StaticResource DangerDark}"/>
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+
+		<!-- Make DataGrid header text black -->
+		<Style TargetType="DataGridColumnHeader">
+			<Setter Property="Foreground" Value="Black"/>
+			<Setter Property="FontWeight" Value="SemiBold"/>
+			<Setter Property="Background" Value="#e5e7eb"/>
+			<!-- light gray for readability -->
+			<Setter Property="BorderBrush" Value="#d1d5db"/>
+			<Setter Property="Height" Value="36"/>
+		</Style>
+
+		<!-- Slide-in rows + telemetry pulse -->
+		<Style TargetType="DataGridRow">
+			<Setter Property="Opacity" Value="0"/>
+			<Setter Property="RenderTransform">
+				<Setter.Value>
+					<TranslateTransform X="20"/>
+				</Setter.Value>
+			</Setter>
+			<Style.Triggers>
+				<EventTrigger RoutedEvent="Loaded">
+					<BeginStoryboard>
+						<Storyboard>
+							<DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.25"/>
+							<DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" From="20" To="0" Duration="0:0:0.25"/>
+						</Storyboard>
+					</BeginStoryboard>
+				</EventTrigger>
+				<DataTrigger Binding="{Binding RecentlyUpdated}" Value="True">
+					<DataTrigger.EnterActions>
+						<BeginStoryboard>
+							<Storyboard>
+								<DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0.6" Duration="0:0:0.2" AutoReverse="True" RepeatBehavior="2x"/>
+							</Storyboard>
+						</BeginStoryboard>
+					</DataTrigger.EnterActions>
+				</DataTrigger>
+			</Style.Triggers>
+		</Style>
+	</Window.Resources>
+
+	<Grid Margin="16">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!-- Header -->
+		<Border Grid.Row="0" Padding="12" CornerRadius="12"
+                Background="#111827" BorderBrush="{StaticResource CardBorder}" BorderThickness="1">
+			<StackPanel Orientation="Vertical">
+				<TextBlock Text="IoT Device Manager" FontSize="22" FontWeight="Bold"/>
+				<TextBlock Text="Add devices, simulate connectivity and telemetry in real-time."
+                           Foreground="{StaticResource TextSecondary}" FontSize="12"/>
+			</StackPanel>
+		</Border>
+
+		<!-- Main content -->
+		<Grid Grid.Row="1" Margin="0,12,0,0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="2.2*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1.5*"/>
+				<RowDefinition Height="1.2*"/>
+			</Grid.RowDefinitions>
+
+			<!-- Devices -->
+			<GroupBox Header="Devices" Grid.Row="0" Grid.Column="0">
+				<DockPanel>
+					<!-- Simplified toolbar -->
+					<StackPanel DockPanel.Dock="Top"
+								Orientation="Horizontal"
+								HorizontalAlignment="Center"
+								Margin="0,0,0,12"
+								VerticalAlignment="Center">
+
+						<Button Style="{StaticResource PrimaryButton}"
+								Content="Add Device"
+								FontSize="16"
+								Padding="20,10"
+								Width="180"
+								Height="50"
+								Command="{Binding AddCommand}"/>
+
+						<Button Style="{StaticResource ToolbarButton}"
+								Content="Update Device"
+								FontSize="16"
+								Padding="20,10"
+								Width="180"
+								Height="50"
+								Margin="12,0,0,0"
+								Command="{Binding UpdateCommand}"/>
+
+						<Button Style="{StaticResource DangerButton}"
+								Content="Delete Device"
+								FontSize="16"
+								Padding="20,10"
+								Width="180"
+								Height="50"
+								Margin="12,0,0,0"
+								Command="{Binding DeleteCommand}"/>
+
+						<Button Style="{StaticResource ToolbarButton}"
+								Content="Toggle Status"
+								FontSize="16"
+								Padding="20,10"
+								Width="180"
+								Height="50"
+								Margin="12,0,0,0"
+								Command="{Binding ToggleStatusCommand}"/>
+					</StackPanel>
+
+					<!-- Data grid -->
+					<DataGrid x:Name="DevicesGrid"
+							  MouseDoubleClick="DevicesGrid_MouseDoubleClick"
+							  ItemsSource="{Binding Devices}"
+							  SelectedItem="{Binding SelectedDevice}"
+							  AutoGenerateColumns="False"
+							  CanUserAddRows="False"
+							  RowHeight="32"
+							  HeadersVisibility="All"
+							  Background="#0b1220"
+							  Foreground="{StaticResource TextPrimary}"
+							  BorderBrush="{StaticResource CardBorder}"
+							  RowBackground="#0c1424"
+							  AlternatingRowBackground="#0f182a">
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="Name" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Width="*" />
+							<DataGridTextColumn Header="Type" Binding="{Binding Type, UpdateSourceTrigger=PropertyChanged}" Width="160" />
+							<DataGridTemplateColumn Header="Status" Width="120">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<Border x:Name="chip" Padding="8,2" CornerRadius="12" Background="#7f1d1d" HorizontalAlignment="Left">
+											<TextBlock Text="{Binding Status}" Foreground="White" FontWeight="SemiBold"/>
+										</Border>
+										<DataTemplate.Triggers>
+											<DataTrigger Binding="{Binding IsOnline}" Value="True">
+												<Setter TargetName="chip" Property="Background" Value="#065f46"/>
+											</DataTrigger>
+										</DataTemplate.Triggers>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+							<DataGridTextColumn Header="Last Data" Binding="{Binding LastData}" Width="160" IsReadOnly="True" />
+							<DataGridTextColumn Header="Last Seen (UTC)" Binding="{Binding LastSeenUtc}" Width="190" IsReadOnly="True" />
+						</DataGrid.Columns>
+					</DataGrid>
+				</DockPanel>
+			</GroupBox>
+
+			<!-- Logs -->
+			<GroupBox Header="Logs" Grid.Row="1" Grid.Column="0">
+				<DockPanel>
+					<Button Content="Clear Logs" DockPanel.Dock="Top" Width="130" HorizontalAlignment="Right"
+                            Style="{StaticResource DangerButton}" Command="{Binding ClearLogsCommand}"/>
+					<ListView ItemsSource="{Binding Logs}"
+                              Background="#0b1220" Foreground="{StaticResource TextPrimary}" BorderBrush="{StaticResource CardBorder}">
+						<ListView.View>
+							<GridView>
+								<GridViewColumn Header="Time (UTC)" DisplayMemberBinding="{Binding TimestampUtc}" Width="200"/>
+								<GridViewColumn Header="Action" DisplayMemberBinding="{Binding Action}" Width="130"/>
+								<GridViewColumn Header="Message" DisplayMemberBinding="{Binding Message}" Width="560"/>
+							</GridView>
+						</ListView.View>
+					</ListView>
+				</DockPanel>
+			</GroupBox>
+
+			<!-- Selected detail -->
+			<GroupBox Header="Selected Device" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+				<StackPanel>
+					<TextBlock Text="{Binding SelectedDevice.Name}" FontSize="18" FontWeight="Bold" Margin="0,0,0,8"/>
+
+					<StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+						<TextBlock Text="Type: " />
+						<TextBlock Text="{Binding SelectedDevice.Type}" />
+					</StackPanel>
+
+					<StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+						<TextBlock Text="Status: " />
+						<TextBlock Text="{Binding SelectedDevice.Status}" />
+					</StackPanel>
+
+					<StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+						<TextBlock Text="Last Data: " />
+						<TextBlock Text="{Binding SelectedDevice.LastData}" />
+					</StackPanel>
+
+					<StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+						<TextBlock Text="Last Seen (UTC): " />
+						<TextBlock Text="{Binding SelectedDevice.LastSeenUtc}" />
+					</StackPanel>
+
+					<Border Margin="0,16,0,0" Padding="10" CornerRadius="8" Background="#0b1220" BorderBrush="{StaticResource CardBorder}" BorderThickness="1">
+						<StackPanel>
+							<TextBlock Text="How to use" FontWeight="Bold"/>
+							<TextBlock Foreground="{StaticResource TextSecondary}" Text="• Type a Name to enable Add."/>
+							<TextBlock Foreground="{StaticResource TextSecondary}" Text="• Select a device row to enable Update/Delete/Toggle."/>
+							<TextBlock Foreground="{StaticResource TextSecondary}" Text="• Telemetry &amp; connectivity changes appear in Logs."/>
+						</StackPanel>
+					</Border>
+				</StackPanel>
+			</GroupBox>
+		</Grid>
+	</Grid>
+</Window>

@@ -1,0 +1,5 @@
+C:\Users\blood\Desktop\Job\Job Assessment\IoTDeviceManager\IoTDeviceManager\obj\Debug\net6.0-windows\Views\MainWindow.g.cs
+C:\Users\blood\Desktop\Job\Job Assessment\IoTDeviceManager\IoTDeviceManager\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\blood\Desktop\Job\Job Assessment\IoTDeviceManager\IoTDeviceManager\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\blood\Desktop\Job\Job Assessment\IoTDeviceManager\IoTDeviceManager\obj\Debug\net6.0-windows\IoTDeviceManager_MarkupCompile.cache
+C:\Users\blood\Desktop\Job\Job Assessment\IoTDeviceManager\IoTDeviceManager\obj\Debug\net6.0-windows\IoTDeviceManager_MarkupCompile.lref
